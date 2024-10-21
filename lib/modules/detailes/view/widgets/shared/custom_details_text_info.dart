@@ -16,10 +16,13 @@ class CustomDetailsTextInfo extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomText(
-          text: text,
-          color: Colors.black,
-          textAlign: TextAlign.start,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: CustomText(
+            text: text,
+            color: AppColors.primaryColor,
+            textAlign: TextAlign.start,
+          ),
         ),
         const SizedBox(
           height: 25,
@@ -27,10 +30,19 @@ class CustomDetailsTextInfo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomText(
-              text: title ?? "",
-              color: Colors.red,
-              fontWeight: FontWeight.w500,
+            Row(
+              children: [
+                const SizedBox(
+                  width: 10,
+                ),
+                CustomText(
+                  text: title ?? "",
+                  textStyle: Theme.of(context)
+                      .textTheme
+                      .displayMedium
+                      ?.copyWith(color: AppColors.primaryColor),
+                ),
+              ],
             ),
             Column(
               children: [
@@ -38,8 +50,8 @@ class CustomDetailsTextInfo extends StatelessWidget {
                   Container(
                     width: 70,
                     height: 40,
-                    decoration: const BoxDecoration(
-                        color: Color.fromARGB(221, 207, 205, 205),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(45),
                             topLeft: Radius.circular(45))),
@@ -55,7 +67,7 @@ class CustomDetailsTextInfo extends StatelessWidget {
                           if (controller.isFavorite == false) {
                             controller.addDataToFav();
                           } else {
-                            print('object');
+                            controller.delete();
                           }
                         },
                       );

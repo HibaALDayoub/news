@@ -12,7 +12,7 @@ class FilterController extends GetxController {
   List<NameCountryModel> countries = countriesList;
   List<ArticleModel> articlesByCountries = [];
   List<ArticleModel> articlesReverse = [];
-  List<String> sortedList = ['Newest', 'Oldest'];
+  List<String> sortedList = ['Newest'.tr, 'Oldest'.tr];
   // List<Article> news = [];
 //صرت هون==========================
   FilterDataImp filterDataImp = FilterDataImp(httpMethods: Get.find());

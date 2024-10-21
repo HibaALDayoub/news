@@ -1,14 +1,17 @@
+import 'package:get/get.dart';
+
 import '../model/name_country_model.dart';
 
 List<NameCountryModel> countriesList = [
-  NameCountryModel(id: 1, country: 'United Arab Emirates', countryCode: 'ae'),
-  NameCountryModel(id: 2, country: 'Australia', countryCode: 'au'),
-  NameCountryModel(id: 3, country: 'Brazil', countryCode: 'br'),
-  NameCountryModel(id: 4, country: 'Canada', countryCode: 'ca'),
-  NameCountryModel(id: 5, country: 'Egypt', countryCode: 'eg'),
-  NameCountryModel(id: 6, country: 'United Kingdom', countryCode: 'gb'),
-  NameCountryModel(id: 7, country: 'Italy', countryCode: 'it'),
-  NameCountryModel(id: 8, country: 'Korea', countryCode: 'kr'),
-  NameCountryModel(id: 9, country: 'Russia', countryCode: 'ru'),
-  NameCountryModel(id: 10, country: 'United States', countryCode: 'us'),
+  NameCountryModel(
+      id: 1, country: 'United Arab Emirates'.tr, countryCode: 'ae'),
+  NameCountryModel(id: 2, country: 'Australia'.tr, countryCode: 'au'),
+  NameCountryModel(id: 3, country: 'Brazil'.tr, countryCode: 'br'),
+  NameCountryModel(id: 4, country: 'Canada'.tr, countryCode: 'ca'),
+  NameCountryModel(id: 5, country: 'Egypt'.tr, countryCode: 'eg'),
+  NameCountryModel(id: 6, country: 'United Kingdom'.tr, countryCode: 'gb'),
+  NameCountryModel(id: 7, country: 'Italy'.tr, countryCode: 'it'),
+  NameCountryModel(id: 8, country: 'Korea'.tr, countryCode: 'kr'),
+  NameCountryModel(id: 9, country: 'Russia'.tr, countryCode: 'ru'),
+  NameCountryModel(id: 10, country: 'United States'.tr, countryCode: 'us'),
 ];

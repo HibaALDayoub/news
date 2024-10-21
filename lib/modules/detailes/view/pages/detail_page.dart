@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_project/core/constant/colors/app_colors.dart';
 import 'package:news_project/modules/main/view/widgets/custom_image.dart';
 import '../../../../core/constant/size/app_size.dart';
 
@@ -35,67 +36,69 @@ class DetailPage extends StatelessWidget {
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: Colors.black,
+                            color: AppColors.secondaryColor,
                           ),
-                          child: const Icon(
-                            Icons.arrow_back,
-                            size: 35,
-                            color: Colors.white,
+                          child: IconButton(
+                            onPressed: () {
+                              Get.back();
+                            },
+                            icon: Icon(Icons.arrow_back),
+                            iconSize: 25,
+                            color: AppColors.whiteColor,
                           ),
                         ),
                       ),
-                      Container(
-                        height: 20,
-                        width: 20,
-                        color: Colors.blue,
-                      )
+                      // Container(
+                      //   margin: EdgeInsets.all(10),
+                      //   height: 50,
+                      //   width: 50,
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(10),
+                      //     color: AppColors.secondaryColor.withOpacity(0.6),
+                      //   ),
+                      // )
                     ],
                   )
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomDetailsTextInfo(
-                        text: controller.articleModel.title ?? "No Title",
-                        title: "Description : ",
-                        isIconFav: true),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CustomDetailsTextInfo(
-                      text: controller.articleModel.description ??
-                          "No Description kkkkkhhhfkkkkkkkkkkkkkkklllllllkk khhhredswekmnbkkkkkkkhhhredswekmnbkkkkkkkkkkkhhhredswekmnbvffkkkkkkkkkkkkkkkll kkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-                      title: "Content : ",
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const CustomDetailsTextInfo(
-                      text:
-                          "______________________  kkkkkhhhfkkkkkkkkkkkkkkklllllllkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk ..[+22]",
-                      title: "Author : ",
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CustomDetailsTextInfo(
-                      title: "Published At  : ",
-                      text: controller.articleModel.author ??
-                          "kkkkkkkkkkkkkk kkkkkkk  kkkkkkkkkkk",
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CustomDetailsTextInfo(
-                      text: controller.articleModel.publishedAt ??
-                          "2023-07-06 15:01:27.000z",
-                    ),
-                  ],
-                ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomDetailsTextInfo(
+                      title: "Description".tr,
+                      text: controller.articleModel.title ?? "No Title".tr,
+                      isIconFav: true),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomDetailsTextInfo(
+                    text: controller.articleModel.description ??
+                        "No Description".tr,
+                    title: "Content".tr,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomDetailsTextInfo(
+                    text: "${controller.articleModel.content}",
+                    title: "Author".tr,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomDetailsTextInfo(
+                    title: "Published At".tr,
+                    text: controller.articleModel.author ?? "no author".tr,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomDetailsTextInfo(
+                    text: controller.articleModel.publishedAt ??
+                        "2023-07-06 15:01:27.000z".tr,
+                  ),
+                ],
               )
             ],
           ),

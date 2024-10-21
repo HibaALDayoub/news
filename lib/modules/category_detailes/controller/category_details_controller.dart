@@ -9,6 +9,7 @@ class CategoryController extends GetxController {
   List<ArticleModel> articles = [];
   StatusRequest statusRequest = StatusRequest.none;
 
+  // HomeController controller = Get.find();
   getNewsData() async {
     statusRequest = StatusRequest.loading;
     update();

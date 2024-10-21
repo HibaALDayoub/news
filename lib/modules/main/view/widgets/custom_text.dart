@@ -6,23 +6,26 @@ class CustomText extends StatelessWidget {
   final FontWeight? fontWeight;
   final double? fontSize;
   final TextAlign? textAlign;
+  final TextStyle? textStyle;
   const CustomText(
       {super.key,
       required this.text,
       this.color,
       this.fontWeight,
       this.fontSize,
-      this.textAlign});
+      this.textAlign,
+      this.textStyle});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        color: color ?? Colors.black54,
-        fontWeight: fontWeight ?? FontWeight.normal,
-        fontSize: fontSize,
-      ),
+      style: textStyle ?? Theme.of(context).textTheme.displayMedium,
+      // style: TextStyle(
+      //   color: color ?? AppColors.black38,
+      //   fontWeight: fontWeight ?? FontWeight.normal,
+      //   fontSize: fontSize,
+      // ),
       textAlign: textAlign ?? TextAlign.center,
     );
   }

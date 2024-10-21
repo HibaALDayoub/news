@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_project/core/constant/colors/app_colors.dart';
 
 import 'package:news_project/core/constant/size/app_size.dart';
 import 'package:news_project/modules/home/data/categories_static_data.dart';
@@ -31,7 +30,7 @@ class CategoriesNews extends StatelessWidget {
               height: 75,
               width: 75,
               decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 247, 214, 214),
+                  color: Theme.of(context).dialogBackgroundColor,
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -39,15 +38,14 @@ class CategoriesNews extends StatelessWidget {
                   Icon(
                     categoriesList[index].image,
                     size: 35,
-                    color: Colors.red,
+                    color: AppColors.primaryColor,
                   ),
                   const SizedBox(
                     height: 3,
                   ),
                   CustomText(
                       text: categoriesList[index].name,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+                      textStyle: Theme.of(context).textTheme.displayMedium,
                       fontSize: 12),
                 ],
               ),

@@ -1,17 +1,14 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_project/core/classes/status_request.dart';
 
 import '../data/home_data_imp.dart';
 import '../model/article_model.dart';
-import '../model/category_model.dart';
 
 class HomeController extends GetxController {
   List<ArticleModel> articleModel = [];
   StatusRequest statusRequest = StatusRequest.none;
   HomeDataImp homeDataImp = HomeDataImp(httpMethods: Get.find());
+  bool isVisible = false;
   getNewsData() async {
     statusRequest = StatusRequest.loading;
     update();

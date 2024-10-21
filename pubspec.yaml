@@ -43,6 +43,7 @@ dependencies:
   dartz: ^0.10.1
   #local storage
   get_storage: ^2.1.1
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:

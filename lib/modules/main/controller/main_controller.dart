@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +14,11 @@ class MainController extends GetxController {
   MainDataImp mainDataImp = MainDataImp(httpMethods: Get.find());
 // List<> categoryModel =CategoryModel(id: id, name: name, image: image)
   int selectedIndex = 0;
-  List<Widget> mainWidgets = [HomePage(), FavoritePage(), FilterPage()];
+  List<Widget> mainWidgets = [
+    const HomePage(),
+    FavoritePage(),
+    const FilterPage()
+  ];
 
   getMainData() async {
     var response = await mainDataImp.viewMainData();

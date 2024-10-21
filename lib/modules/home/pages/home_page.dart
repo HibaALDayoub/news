@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_project/core/classes/status_request.dart';
-import 'package:news_project/core/constant/colors/app_colors.dart';
 import 'package:news_project/modules/home/controller/home_controller.dart';
 import '../../main/view/widgets/custom_text.dart';
 import '../widgets/home_hot_news.dart';
@@ -31,11 +30,10 @@ class HomePage extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        const CustomText(
-                            text: "Hot News",
-                            color: AppColors.secondaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        CustomText(
+                          text: "HotNews".tr,
+                          textStyle: Theme.of(context).textTheme.displayMedium,
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
@@ -43,11 +41,10 @@ class HomePage extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const CustomText(
-                            text: "Categories",
-                            color: AppColors.secondaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        CustomText(
+                          text: "Categories".tr,
+                          textStyle: Theme.of(context).textTheme.displayMedium,
+                        ),
                         const SizedBox(
                           height: 15,
                         ),
@@ -55,11 +52,11 @@ class HomePage extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const CustomText(
-                            text: "News",
-                            color: AppColors.secondaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        CustomText(
+                          text: "News".tr,
+                          textStyle: Theme.of(context).textTheme.displayMedium,
+                          // fontSize: 16
+                        ),
                         const SizedBox(
                           height: 20,
                         ),

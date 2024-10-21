@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:news_project/modules/help&support/binding/help_support_binding.dart';
+import 'package:news_project/modules/help&support/view/help_support_page.dart';
 
 import '../../modules/category_detailes/binding/category_details_binding.dart';
 import '../../modules/category_detailes/view/category_details_page.dart';
@@ -33,5 +35,11 @@ List<GetPage<dynamic>>? routes = [
       page: () => CategoryDetailsPage(),
       transition: Transition.fade,
       binding: CategoryDetailBinding(),
+      transitionDuration: const Duration(milliseconds: 700)),
+  GetPage(
+      name: AppRoutes.helpSupport,
+      page: () => HelpSupportPage(),
+      transition: Transition.fade,
+      binding: HelpSupportBinding(),
       transitionDuration: const Duration(milliseconds: 700)),
 ];

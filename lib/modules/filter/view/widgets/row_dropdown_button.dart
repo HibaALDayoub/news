@@ -1,33 +1,42 @@
-import 'package:flutter/widgets.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:news_project/modules/filter/controller/filter_controller.dart';
 
-import '../../../../core/constant/colors/app_colors.dart';
+import '../../../../core/helper/localization/localization_helper.dart';
 import '../../../main/view/widgets/custom_text.dart';
 import 'dropdown_button.dart';
 
 class RowDropdownButton extends StatelessWidget {
   RowDropdownButton({super.key});
 
-  // dynamic selected;
-  // dynamic secondSelected = 'Newest';
-  // dynamic firstSelected;
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<FilterController>(
         builder: (controller) => Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   flex: 1,
                   child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
                         child: Container(
-                            margin: EdgeInsets.only(top: 12, right: 0),
-                            child: const CustomText(
-                              text: "Country",
-                              color: AppColors.nightGrey,
+                            margin: EdgeInsets.only(
+                                right: LocalaizationHelper.isEn() ? 0 : 0,
+                                top: 16),
+                            child: CustomText(
+                              textAlign: TextAlign.start,
+                              text: "Country".tr,
+                              textStyle: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium
+                                  ?.copyWith(
+                                      // fontSize:
+                                      //     LocalaizationHelper.isEn() ? 17 : 24,
+                                      color:
+                                          Theme.of(context).primaryColorLight),
+                              // color: AppColors.nightGrey,
                             )),
                       ),
                       CustomDropdownButton(
@@ -46,14 +55,20 @@ class RowDropdownButton extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
                         child: Container(
                             margin: const EdgeInsets.only(top: 12),
-                            child: const CustomText(
-                              text: "Sorted By",
-                              color: AppColors.nightGrey,
+                            child: CustomText(
+                              text: "Sorted By".tr,
+                              textStyle: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium
+                                  ?.copyWith(
+                                      color:
+                                          Theme.of(context).primaryColorLight),
+                              // color: AppColors.nightGrey,
                             )),
                       ),
                       CustomDropdownButton(
@@ -64,6 +79,9 @@ class RowDropdownButton extends StatelessWidget {
                         },
                         itemSelected: controller.secondSelected,
                         isModel: false,
+                      ),
+                      SizedBox(
+                        width: 10,
                       )
                     ],
                   ),

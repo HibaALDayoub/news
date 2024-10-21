@@ -49,66 +49,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-
-  /// `Best Experience To See News Around The Word`
-  String get textSplash {
-    return Intl.message(
-      'Best Experience To See News Around The Word',
-      name: 'textSplash',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Next`
-  String get btnNext {
-    return Intl.message(
-      'Next',
-      name: 'btnNext',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `News`
-  String get titleAppBar {
-    return Intl.message(
-      'News',
-      name: 'titleAppBar',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Filter`
-  String get bnbFilter {
-    return Intl.message(
-      'Filter',
-      name: 'bnbFilter',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Favorite`
-  String get bnbFavorite {
-    return Intl.message(
-      'Favorite',
-      name: 'bnbFavorite',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Home`
-  String get bnbHome {
-    return Intl.message(
-      'Home',
-      name: 'bnbHome',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -117,7 +57,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

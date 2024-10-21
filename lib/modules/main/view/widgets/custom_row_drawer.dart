@@ -9,18 +9,22 @@ class CustomRowDrawer extends StatelessWidget {
       required this.icon,
       required this.iconColor,
       required this.textInDrawer,
-      this.backIcon = false});
-  final IconData? icon;
+      this.backIcon = false,
+      this.onPressed});
+  final Widget icon;
   final bool backIcon;
   final Color iconColor;
   final String textInDrawer;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          icon,
-          color: iconColor,
+        IconButton(
+          onPressed: onPressed,
+          icon: icon,
+          // color: AppColors.primaryColor,
+          disabledColor: iconColor,
         ),
         const Spacer(),
         CustomText(
@@ -33,7 +37,7 @@ class CustomRowDrawer extends StatelessWidget {
           if (backIcon)
             const Icon(
               Icons.arrow_forward,
-              color: Colors.blue,
+              color: AppColors.primaryColor,
             ),
         ]),
       ],

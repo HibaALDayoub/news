@@ -27,3 +27,7 @@ class FavoriteDataImp implements FavoriteData {
     LocalStorageService.setString(key: 'favorite', value: json.encode(datamap));
   }
 }
+// {[
+//   {},
+//   {}
+// ]}

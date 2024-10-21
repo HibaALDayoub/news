@@ -3,29 +3,33 @@ import 'package:flutter/material.dart';
 import '../../../../core/constant/colors/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton(
+  const CustomButton(
       {super.key,
       this.onTap,
       required this.height,
       this.textColor,
       this.color,
-      required this.text});
+      required this.text,
+      this.minWidth,
+      this.padding});
   final void Function()? onTap;
   final double height;
   final Color? textColor;
   final Color? color;
   final String text;
+  final double? minWidth;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       height: height,
-      padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 0),
-      textColor: textColor ?? Colors.white,
+      padding: padding ?? EdgeInsets.symmetric(horizontal: 120, vertical: 0),
+      textColor: textColor ?? AppColors.whiteColor,
       color: color ?? AppColors.primaryColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       onPressed: onTap,
       child: Text(text),
-      minWidth: 60,
+      minWidth: minWidth ?? 60,
     );
   }
 }

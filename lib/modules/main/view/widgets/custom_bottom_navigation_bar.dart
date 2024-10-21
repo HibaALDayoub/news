@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:news_project/generated/l10n.dart';
+import 'package:news_project/core/constant/colors/app_colors.dart';
 
 import '../../controller/main_controller.dart';
 
@@ -12,24 +12,32 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return GetBuilder<MainController>(
       builder: (controller) => BottomNavigationBar(
         currentIndex: controller.selectedIndex,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.black,
+        backgroundColor: Theme.of(context).dialogBackgroundColor,
+        unselectedItemColor: AppColors.secondaryColor,
         onTap: (value) {
           controller.selectedIndex = value;
           controller.update();
         },
+        selectedIconTheme: IconThemeData(
+          color: Theme.of(context)
+              .bottomNavigationBarTheme
+              .selectedIconTheme
+              ?.color,
+        ),
+        selectedItemColor:
+            Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
         items: [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
-            label: S.of(context).bnbHome,
+            icon: Icon(Icons.home),
+            label: "Home".tr,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.favorite),
-            label: S.of(context).bnbFavorite,
+            label: "Favorite".tr,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.filter),
-            label: S.of(context).bnbFilter,
+            label: "Filter".tr,
           )
         ],
       ),

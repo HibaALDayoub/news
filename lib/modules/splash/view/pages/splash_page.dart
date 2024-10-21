@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:news_project/modules/main/view/widgets/custom_button.dart';
-import 'package:news_project/modules/main/view/widgets/custom_image.dart';
 import 'package:news_project/modules/main/view/widgets/custom_text.dart';
 
-import '../../../../core/constant/colors/app_colors.dart';
-
 import '../../../../core/constant/routes/app_routes.dart';
-import '../../../../core/image_assests.dart';
-import '../../../../generated/l10n.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -17,21 +13,18 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Column(
         children: [
           const SizedBox(
             height: 70,
           ),
-          const SizedBox(
-              child: Image(
-            image: AssetImage(ImageAsset.onBoardingImageOne),
-            fit: BoxFit.fill,
-          )
-
-              // CustomImage(
-              //     image: ImageAsset.onBoardingImageOne, boxFit: BoxFit.fill),
-              ),
+          SizedBox(
+            child: Lottie.asset(
+              'assets/images/start.json',
+              fit: BoxFit.fill,
+            ),
+          ),
           Expanded(
             flex: 1,
             child: Container(
@@ -39,16 +32,13 @@ class SplashPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
                 child: CustomText(
-                    text: S.of(context).textSplash,
-                    // text: "Best Experience To See News Around The Word",
-                    textAlign: TextAlign.center,
-                    color: AppColors.secondaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16)),
+                  text: "Best Experience To See News Around The Word".tr,
+                  textAlign: TextAlign.center,
+                  textStyle: Theme.of(context).textTheme.displayMedium,
+                )),
           ),
           CustomButton(
-            // text: "Next",
-            text: S.of(context).btnNext,
+            text: "Next".tr,
             height: 50,
             onTap: () {
               Get.toNamed(AppRoutes.mainRoute);

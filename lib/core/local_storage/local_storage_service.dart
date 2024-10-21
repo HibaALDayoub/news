@@ -11,6 +11,14 @@ class LocalStorageService {
   }
 
   static String getString(String key) {
-    return box.read(key);
+    return box.read(key) ?? '';
+  }
+
+  static setBool({required String key, required bool value}) {
+    box.write(key, value);
+  }
+
+  static bool getBool(String key) {
+    return box.read(key) ?? false;
   }
 }
